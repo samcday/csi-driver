@@ -34,7 +34,7 @@ go test $(go list ./... | grep integration) -v
 ### E2E Tests
 
 > ⚠️ Kubernetes E2E Tests were recently refactored and the docs are now outdated.
-> See the [GitHub Actions workflow](.github/workflows/test_e2e.yml) for an
+> See the [GitHub Actions workflow](.github/workflows/test.yml) for an
 > up-to-date script to run the e2e tests.
 
 The Hetzner Cloud CSI Driver was tested against the official k8s e2e
