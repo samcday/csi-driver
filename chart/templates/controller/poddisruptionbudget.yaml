@@ -1,5 +1,5 @@
 {{- $replicaCount := int .Values.controller.replicaCount }}
-{{- if and .Values.controller.podDisruptionBudget.create (gt $replicaCount 1) }}
+{{- if and .Values.controller.enabled .Values.controller.podDisruptionBudget.create (gt $replicaCount 1) }}
 apiVersion: policy/v1
 kind: PodDisruptionBudget
 metadata:

@@ -1,3 +1,4 @@
+{{ if .Values.controller.enabled }}
 {{ $enableLeaderElection := gt (int .Values.controller.replicaCount) 1 }}
 
 apiVersion: apps/v1
@@ -215,3 +216,4 @@ spec:
         {{- if .Values.controller.extraVolumes }}
         {{- include "common.tplvalues.render" (dict "value" .Values.controller.extraVolumes "context" $) | nindent 8 }}
         {{- end }}
+{{ end }}

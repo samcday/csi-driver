@@ -1,3 +1,4 @@
+{{ if .Values.node.enabled }}
 apiVersion: apps/v1
 kind: DaemonSet
 metadata:
@@ -175,3 +176,4 @@ spec:
         {{- if .Values.node.extraVolumes }}
         {{- include "common.tplvalues.render" (dict "value" .Values.node.extraVolumes "context" $) | nindent 8 }}
         {{- end }}
+{{ end }}

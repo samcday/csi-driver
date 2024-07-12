@@ -58,6 +58,7 @@ controller:
   ## @param controller.image.hcloudCSIDriver.pullPolicy hcloud-csi-driver image pull policy
   ## @param controller.image.hcloudCSIDriver.pullSecrets hcloud-csi-driver image pull secrets
   ##
+  enabled: true
   image:
     csiAttacher:
       name: registry.k8s.io/sig-storage/csi-attacher
@@ -381,6 +382,8 @@ controller:
 ## Node
 ##
 node:
+  enabled: true
+
   ## @param node.image.csiNodeDriverRegistrar.name csi-node-driver-registrar image name
   ## @param node.image.csiNodeDriverRegistrar.tag csi-node-driver-registrar image tag
   ## @param node.image.csiNodeDriverRegistrar.pullPolicy csi-node-driver-registrar image pull policy
@@ -724,3 +727,6 @@ storageClasses:
   - name: hcloud-volumes
     defaultStorageClass: true
     reclaimPolicy: Delete
+
+csiDriver:
+  install: true

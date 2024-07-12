@@ -1,4 +1,4 @@
-{{ if .Values.controller.rbac.create }}
+{{ if and .Values.controller.enabled .Values.controller.rbac.create }}
 {{ $enableLeaderElection := gt (int .Values.controller.replicaCount) 1 }}
 
 kind: ClusterRole
